@@ -5,6 +5,7 @@ import { IconMenu, IconX } from '../components/ui/Icons.jsx';
 import { SocialLinks } from '../components/ui/SocialLinks.jsx';
 import { AmbientBackground } from '../components/layout/AmbientBackground.jsx';
 import { SITE } from '../data/portfolio.js';
+import { scrollToSection } from '../lib/scrollToSection.js';
 
 const nav = [
   { href: '#about', label: 'About' },
@@ -19,6 +20,23 @@ export function PublicLayout() {
   const mobileLinkClass =
     'block rounded-xl px-4 py-3 text-base font-medium text-content-muted transition-all duration-200 hover:bg-white/[0.06] hover:text-content';
 
+  function handleNavClick(e, href) {
+    e.preventDefault();
+    const sectionId = href.replace(/^#/, '');
+    const wasMenuOpen = mobileOpen;
+    setMobileOpen(false);
+    const scroll = () => scrollToSection(sectionId);
+    if (wasMenuOpen) {
+      window.setTimeout(scroll, 200);
+    } else {
+      window.requestAnimationFrame(scroll);
+    }
+  }
+
+  function handleHomeClick(e) {
+    handleNavClick(e, '#home');
+  }
+
   return (
     <div className="relative min-h-svh bg-surface text-content">
       <AmbientBackground />
@@ -27,6 +45,7 @@ export function PublicLayout() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:py-4 lg:px-8">
           <a
             href="#home"
+            onClick={handleHomeClick}
             className="font-display text-lg font-semibold tracking-tight text-content transition hover:text-accent"
           >
             {SITE.name}
@@ -37,6 +56,7 @@ export function PublicLayout() {
               <a
                 key={href}
                 href={href}
+                onClick={(e) => handleNavClick(e, href)}
                 className="rounded-xl px-3 py-2 text-sm font-medium text-content-muted transition-all duration-200 hover:bg-white/[0.06] hover:text-content"
               >
                 {label}
@@ -69,7 +89,7 @@ export function PublicLayout() {
                     key={href}
                     href={href}
                     className={mobileLinkClass}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => handleNavClick(e, href)}
                   >
                     {label}
                   </a>
