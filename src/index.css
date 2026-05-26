@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply m-0 min-h-svh bg-surface font-sans text-content antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  #root {
+    @apply relative min-h-svh w-full max-w-none border-0 m-0 text-left;
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: theme('fontFamily.display');
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-br from-content via-content to-content-muted bg-clip-text text-transparent;
+  }
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent via-cyan-300 to-accent-hover bg-clip-text text-transparent;
+  }
+}
