@@ -136,80 +136,79 @@ export const projects = [
     slug: 'prompt-management',
     title: 'Prompt Management',
     summary:
-      'An on-premises solution designed to simplify and govern the management of IVR announcement prompts in Cisco UCCE environments. It provides a secure, role-based interface that allows supervisors to publish dynamic audio announcements — such as holiday messages, service outage alerts, or informational notices — directly into the IVR call flow.',
+      'Prompt Management Tool is an enterprise-grade platform designed to centralize the management of IVR audio prompts used by Cisco CVP call flows. The system enables administrators to upload, schedule, activate, and maintain audio announcements through a secure web interface, eliminating manual file management and reducing operational complexity.\n\nKey Contributions:\n• Designed and developed a multi-tier architecture consisting of a Web UI, REST APIs, and a centralized SQL Server database.\n• Implemented secure, web-based file maintenance workflows to upload and distribute WAV files to shared directories.\n• Built scheduled activation logic allowing business teams to dynamically control IVR prompts using precise date and time intervals.\n• Developed real-time status validation mechanisms via API integration with Cisco CVP XML Services.\n• Integrated Active Directory to enforce secure authentication and authorization across the platform.\n• Separated metadata management from physical file storage to optimize prompt retrieval and system security.\n\nCore Capabilities:\n• Centralized IVR prompt management\n• Web-based WAV file upload and maintenance\n• Scheduled activation and time-interval controls\n• Enable/Disable overrides for rapid operational changes\n• Real-time Cisco CVP status validation via APIs\n• Secure prompt metadata storage and retrieval\n• Shared directory management for prompt distribution\n\nTechnologies:\nASP.NET Core, C#, SQL Server, REST APIs, Active Directory, IIS, Cisco CVP, XML Services, HTML, CSS, JavaScript.',
     image: { url: pmImg },
-    tags: ['Cisco UCCE', 'IVR', 'Enterprise'],
+    tags: ['ASP.NET Core', 'C#', 'SQL Server', 'REST APIs', 'Active Directory', 'IIS', 'Cisco CVP', 'XML Services', 'HTML', 'CSS', 'JavaScript'],
   },
   {
     id: 'montool',
     slug: 'montool',
     title: 'MonTool',
     summary:
-      'A centralized, web-based platform designed to provide operational visibility and proactive issue detection for contact center environments. It works by aggregating data across Cisco systems, network devices, and Eleveo recording servers.',
+      'MonTool is an enterprise-grade monitoring and alerting platform designed for Cisco Contact Center environments. The system aggregates alerts, SNMP traps, network diagnostics, server health information, database thresholds, and recording-system events into a centralized real-time monitoring dashboard.\n\nKey Contributions:\n• Designed and implemented distributed background services responsible for collecting, processing, normalizing, and routing monitoring events.\n• Developed SNMP monitoring services supporting SNMP v1, v2, and v3 for Cisco CUIC, VVB, ICM, and external systems.\n• Built health-monitoring services for Cisco Finesse, Eleveo recording servers, private network connectivity, HDS database utilization, and call-recording integrity.\n• Implemented event-driven processing using RabbitMQ queues to support scalable trap ingestion and asynchronous processing.\n• Leveraged Redis caching and real-time dashboard updates to significantly improve monitoring responsiveness.\n• Containerized monitoring services using Docker to simplify infrastructure deployment and horizontal scalability.\n• Developed automated notification services supporting email and SMS alert delivery based on configurable rules.\n• Built scheduled reporting and export functionality for PDF and Excel generation.\n\nCore Capabilities:\n• Real-time monitoring pipeline and dashboard\n• Cisco Contact Center component health checks (CUIC, VVB, ICM, Finesse)\n• Eleveo recording infrastructure and verification\n• Private network and database capacity monitoring (HDS)\n• Event-driven asynchronous processing and SNMP trap normalization\n• Automated alerting (Email/SMS) and scheduled reporting\n\nTechnologies:\nASP.NET Core MVC, Web API, SQL Server, RabbitMQ, Redis, Docker, SNMP, SSH, Background Services, SMTP, SMS Gateway, PDF Reporting, Cisco Contact Center Enterprise (CCE).',
     image: { url: monToolImg },
-    tags: ['Monitoring', 'Cisco', 'Contact Center'],
+    tags: ['ASP.NET Core MVC', 'Web API', 'SQL Server', 'RabbitMQ', 'Redis', 'Docker', 'SNMP', 'SSH', 'Background Services', 'SMTP', 'SMS Gateway', 'PDF Reporting', 'Cisco Contact Center Enterprise (CCE)'],
   },
   {
     id: 'customer-first',
     slug: 'customer-first',
     title: 'Customer First',
     summary:
-      'A powerful feedback tool that enables customers to share insights about their contact center experiences, helping centers recognize areas for improvement and elevate the customer experience. Feedback can be collected via phone call, website link, email or SMS link, or an IVR menu option. The application gathers satisfaction levels, contact reasons, and comments — enabling trend analysis and data-driven decisions to improve service quality, customer satisfaction, and loyalty.',
+      'Customer First is a multi-tenant enterprise feedback platform used by contact centers to collect, analyze, and act on customer satisfaction data across Voice, SMS, Email, and Web channels. The platform enables organizations to measure Customer Satisfaction (CSAT), Customer Effort Score (CES), and service quality through automated post-interaction surveys and real-time reporting.\n\nKey Contributions:\n• Designed and developed features across a multi-tenant architecture where each customer environment maintains isolated data, configuration, and licensing.\n• Built and enhanced RESTful APIs enabling integration with third-party systems and contact center platforms.\n• Implemented automated survey workflows triggered immediately after customer-agent interactions.\n• Developed real-time dashboards, reporting modules, and export functionality (PDF/Excel).\n• Integrated with Cisco Contact Center platforms (CCX/CCE) for agent synchronization and customer interaction workflows.\n• Developed notification services supporting email and SMS alerts based on configurable survey rules and thresholds.\n• Participated in database design, performance optimization, deployment, troubleshooting, and production support activities.\n\nCore Capabilities:\n• Multi-channel surveys (Voice, SMS, Email, Web)\n• Real-time dashboards and analytics\n• Campaign management and scheduling\n• Automated notifications and alerts\n• Multilingual support\n• Multi-tenancy and licensing\n• PDF and Excel reporting\n\nTechnologies:\nASP.NET Core MVC, Web API, SQL Server, JavaScript, jQuery, Windows Services, Cisco CCX/CCE Integration, SMTP, SMS Gateway, IIS.',
     image: { url: cfImg },
-    tags: ['Feedback', 'Analytics', 'Contact Center'],
+    tags: ['ASP.NET Core MVC', 'Web API', 'SQL Server', 'JavaScript', 'jQuery', 'Windows Services', 'Cisco CCX/CCE Integration', 'SMTP', 'SMS Gateway', 'IIS'],
   },
   {
     id: 'lms',
     slug: 'lms',
     title: 'LMS',
     summary:
-      'A web application developed by .NET 8 and MS SQL Server that contains free several courses. Studens can Register into the system to enrol courses. Admin can manage instructors, courses and students',
+      'The Learning Management System (LMS) is a web-based educational platform designed to provide students with easy access to online learning resources while enabling administrators and instructors to efficiently manage educational content. The system serves as a centralized hub for course enrollment, content delivery, student management, and learning progress tracking.\n\nKey Contributions:\n• Designed and developed a layered architecture following SOLID principles and clean separation of concerns.\n• Built RESTful APIs to handle core business operations, data access, and course enrollment workflows.\n• Developed student and instructor management modules alongside role-based access control for administrative functions.\n• Implemented progress tracking mechanisms to monitor student course consumption and completion status.\n• Structured database schemas to manage relational data including users, courses, lessons, and enrollments.\n\nCore Capabilities:\n• Student registration, authentication, and role-based access control\n• Course catalog with enrollment, search, and filtering functionality\n• Instructor management and course assignment\n• Course content organization into structural lessons and modules\n• Student progress tracking, completion monitoring, and management dashboards\n\nTechnologies:\nASP.NET Core (.NET 8), C#, SQL Server, Entity Framework Core, HTML, CSS, Bootstrap, JavaScript.',
     image: { url: lmsImg },
-    tags: ['.NET 8', 'SQL Server', 'Education'],
-  },
+    tags: ['ASP.NET Core (.NET 8)', 'C#', 'SQL Server', 'Entity Framework Core', 'HTML', 'CSS', 'Bootstrap', 'JavaScript'],  },
   {
     id: 'freelancing',
     slug: 'freelancing',
     title: 'Freelancing initiative',
     summary:
-      'Web application that allows registered trainees to create account in the system and download their certificates if they completed a course. Admins have a dashboard that contains a set of statistics that make the administrator manage the system easily.',
+      'The Freelancing Initiative Platform is a training and certification management system designed to support trainees participating in professional development and freelancing programs. The platform enables participants to register, manage their profiles, and download earned certificates, while providing administrators with operational insights through analytical dashboards.\n\nKey Contributions:\n• Developed a multi-layer architecture completely separating the presentation, business logic, and data layers.\n• Implemented an automated certificate validation and secure retrieval pipeline based on course completion rules.\n• Built an administrative dashboard powered by aggregated database statistics to provide real-time operational insights.\n• Optimized complex database queries to ensure rapid reporting, analytics generation, and seamless participant tracking.\n• Enforced secure user authentication and authorization across distinct user roles.\n\nCore Capabilities:\n• User registration, profile management, and role-based access control\n• Automated certificate generation and secure downloading\n• Course completion validation prior to certificate issuance\n• Administrative dashboards with real-time statistics and participation analytics\n• Search and filtering capabilities for efficient participant tracking\n\nTechnologies:\nASP.NET Core, C#, SQL Server, Entity Framework Core, HTML, CSS, Bootstrap, JavaScript.',
     image: { url: freelanceImg },
-    tags: ['Web App', 'Certificates', 'Training'],
+    tags: ['ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework Core', 'HTML', 'CSS', 'Bootstrap', 'JavaScript'],
   },
   {
     id: 'book-summarization',
     slug: 'book-summarization',
     title: 'Multi languages book summarization',
     summary:
-      'A web application developed by .NET 6, MS SQL Server and FastAPI that summarize large Arabic and English books using NLP models',
+      'The Multi-Language Book Summarization Platform is an AI-powered web application designed to generate concise summaries from large Arabic and English books. The platform combines Natural Language Processing (NLP), transformer-based language models, and custom ranking algorithms to extract and generate meaningful summaries from lengthy documents.\n\nKey Contributions:\n• Designed a hybrid microservice-style architecture combining an ASP.NET Core backend with Python-based FastAPI services.\n• Implemented a multi-stage Arabic summarization pipeline featuring text cleaning, LexRank sentence ranking, and AraBART transformer models.\n• Built an English summarization pipeline utilizing structure analysis, TextRank, and Long-T5 transformer models for high-capacity document processing.\n• Developed RESTful communication bridges between the .NET application and Python NLP engines to handle books spanning thousands of pages.\n• Configured GPU-compatible processing environments to optimize the execution performance of heavy transformer models.\n\nCore Capabilities:\n• Large PDF book parsing and processing\n• Multilingual support (Arabic and English) with custom text preprocessing\n• Automatic chapter and section extraction with intelligent content ranking\n• AI-generated abstractive and multi-pass summarization pipelines\n• Seamless REST API integration between web services and NLP engines\n\nTechnologies:\nASP.NET Core (.NET 6), FastAPI, Python, SQL Server, NLP, Hugging Face Transformers, AraBART, AraBERT, BERT, Long-T5, NLTK, PyTorch.',
     image: { url: gpImg },
-    tags: ['NLP', 'FastAPI', '.NET 6'],
+    tags: ['ASP.NET Core (.NET 6)', 'FastAPI', 'Python', 'SQL Server', 'NLP', 'Hugging Face Transformers', 'AraBART', 'AraBERT', 'BERT', 'Long-T5', 'NLTK', 'PyTorch'],
   },
   {
     id: 'e-pharmacy',
     slug: 'e-pharmacy',
     title: 'E-Pharmacy',
     summary:
-      'Web application for ordering medicines by user. Admin can manage orders. This project used ASP.NET 6 web API, JWT and web Application.',
+      'E-Pharmacy is an online healthcare platform that enables customers to browse, search, and order pharmaceutical products through a secure digital experience. The system provides order management capabilities for administrators while ensuring secure user authentication and efficient order processing.\n\nKey Contributions:\n• Developed a secure, layered RESTful API architecture utilizing ASP.NET Core Web API with a clear separation of concerns.\n• Implemented JWT-based authentication and authorization to safeguard sensitive customer data and transactional endpoints.\n• Built shopping cart modules and online order placement workflows targeting an optimized e-commerce user experience.\n• Designed and integrated relational SQL Server database tables to handle rapid transactional product and order data.\n• Developed backend order tracking and administration tools to manage inventory and update order statuses.\n\nCore Capabilities:\n• User registration, secure login, and protected API communication\n• Medicine catalog browsing, searching, categorization, and filtering\n• Interactive shopping cart and online order placement\n• Real-time order tracking and status updates for customers\n• Centralized administrative panel for order and inventory management\n\nTechnologies:\nASP.NET Core Web API (.NET 6), C#, SQL Server, JWT Authentication, Entity Framework Core.',
     image: { url: pharmacyImg },
-    tags: ['ASP.NET 6', 'JWT', 'Healthcare'],
+    tags: ['ASP.NET Core (.NET 6)', 'C#', 'SQL Server', 'JWT Authentication', 'Entity Framework Core'],
   },
   {
     id: 'student-evaluation',
     slug: 'student-evaluation',
     title: 'Student Evaluation',
     summary:
-      'Developed a Rest web API using ASP.NET 6. Students can evaluate their teachers and teachers can display their feedback',
+      'The Student Evaluation System is a RESTful API platform that enables students to anonymously evaluate instructors and provide structured feedback regarding teaching quality, course delivery, and overall learning experience.\n\nKey Contributions:\n• Architected and developed an API-first platform using ASP.NET Core Web API tailored for handling high volumes of evaluations.\n• Implemented anonymous data collection mechanisms to protect student privacy while maintaining strict evaluation rules.\n• Built aggregation engines and database analytical logic to calculate, process, and summarize instructor performance scores.\n• Integrated secure authentication and role-based access mechanisms to separate student submissions from faculty reporting.\n• Developed historical tracking capabilities to monitor feedback trends across multiple academic terms.\n\nCore Capabilities:\n• Anonymous student evaluation and feedback submission\n• Instructor performance reporting, evaluation aggregation, and statistical analytics\n• Secure role-based access control and token-based protection\n• Historical feedback tracking and data trends\n• RESTful API endpoints ready for external institutional integration\n\nTechnologies:\nASP.NET Core Web API (.NET 6), C#, SQL Server, Entity Framework Core.',
     image: { url: studentEvalImg },
-    tags: ['ASP.NET 6', 'REST API', 'Education'],
+    tags: ['ASP.NET Core (.NET 6)', 'C#', 'SQL Server', 'Entity Framework Core'],
   },
   {
     id: 'library',
     slug: 'library',
     title: 'Library',
     summary:
-      'An API project as an example for Repository design pattern uning Unit of Work',
+      'The Library Management API is a backend application developed to demonstrate enterprise software architecture patterns and best practices. The project provides APIs for managing books, authors, borrowers, and lending operations while showcasing a clean architecture implementation.\n\nKey Contributions:\n• Built a highly maintainable enterprise codebase leveraging Clean Architecture principles and Dependency Injection.\n• Implemented a decoupled data access layer utilizing a generic Repository Pattern alongside the Unit of Work pattern.\n• Enforced strict transaction management to ensure absolute data consistency across complex borrowing and return workflows.\n• Developed flexible search, sorting, and filtering logic for library resources using Entity Framework Core.\n• Created a reusable generic architectural blueprint that serves as a foundation for scalable, data-driven systems.\n\nCore Capabilities:\n• Full CRUD management for books, authors, and borrowers\n• Transactional borrowing and return operations\n• Reusable generic data access layer with Repository and Unit of Work integration\n• Advanced query filtering and search functionality\n• Consistent database transaction processing\n\nTechnologies:\nASP.NET Core Web API, C#, SQL Server, Entity Framework Core, Repository Pattern, Unit of Work Pattern.',
     image: { url: libraryImg },
-    tags: ['API', 'Repository Pattern', 'Unit of Work'],
+    tags: ['ASP.NET Core (.NET 6)', 'C#', 'SQL Server', 'Entity Framework Core', 'Repository Pattern', 'Unit of Work Pattern'],
   },
 ];

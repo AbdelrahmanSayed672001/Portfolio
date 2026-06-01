@@ -1,4 +1,5 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { animate, motion, useMotionValue } from 'framer-motion';
 import { Spinner } from '../ui/Spinner.jsx';
 import { ProjectDetailModal } from './ProjectDetailModal.jsx';
@@ -197,7 +198,7 @@ export function ProjectsShowcase({
   className,
 }) {
   const reduced = usePrefersReducedMotion();
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
   const list = useMemo(() => {
     const picked = pickProjects(projects, mode);
     if (typeof limit === 'number' && limit > 0) {
@@ -205,6 +206,27 @@ export function ProjectsShowcase({
     }
     return picked;
   }, [projects, mode, limit]);
+
+  const selectedProjectId = searchParams.get('project');
+  const selectedProject = useMemo(
+    () => list.find((p) => p.id === selectedProjectId || p.slug === selectedProjectId) ?? null,
+    [list, selectedProjectId],
+  );
+
+  const handleSelectProject = useCallback(
+    (project) => {
+      const nextParams = new URLSearchParams(searchParams);
+      nextParams.set('project', project.id ?? project.slug);
+      setSearchParams(nextParams, { replace: false });
+    },
+    [searchParams, setSearchParams],
+  );
+
+  const handleCloseProject = useCallback(() => {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete('project');
+    setSearchParams(nextParams, { replace: true });
+  }, [searchParams, setSearchParams]);
 
   if (isLoading) {
     return (
@@ -252,12 +274,12 @@ export function ProjectsShowcase({
             key={p.id ?? p.slug}
             project={p}
             reduced={reduced}
-            onSelect={setSelectedProject}
+            onSelect={handleSelectProject}
           />
         ))}
       </div>
 
-      <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <ProjectDetailModal project={selectedProject} onClose={handleCloseProject} />
     </div>
   );
 }
